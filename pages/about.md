@@ -1,18 +1,16 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: JUST DO IT
+keywords: Leejiliang, 子路
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+子路无卷，半路入行，奋起直追。
 
-仰慕「优雅编码的艺术」。
-
-坚信熟能生巧，努力改变人生。
+临渊羡鱼不如退而结网。
 
 ## 联系
 
