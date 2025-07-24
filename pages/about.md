@@ -3,7 +3,7 @@ layout: page
 title: About
 description: JUST DO IT
 keywords: Leejiliang, 子路
-comments: true
+comments: false
 menu: 关于
 permalink: /about/
 ---
