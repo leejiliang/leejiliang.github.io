@@ -4,6 +4,7 @@ title: Implementation of service exception alerting.
 categories: [Develop]
 description: Implementation of service exception alerting.
 keywords: server exception, alerting, feishu, monitor
+comments: false
 ---
 应用上线以后，为了确保能够为用户提供24小时可用的服务，需要用上各种手段来保证服务的可用性，例如典型的分布式集群部署。
 实际项目中除了提高可用性，在服务异常时能够在第一时间内提醒开发人员和运维人员处理异常，恢复系统。
