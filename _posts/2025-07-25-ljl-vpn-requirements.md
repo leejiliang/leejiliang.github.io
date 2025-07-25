@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LJL-VPN Requirements Document
-categories: [English]
+categories: [Develop]
 description: Make learning English a daily habit.
 keywords: english, habit, learning
 comments: false
