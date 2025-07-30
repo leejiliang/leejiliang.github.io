@@ -87,6 +87,7 @@ if err := socks.Handshake(conn); err != nil {
 - 与 SOCKS5 客户端进行协议握手
 - 协商认证方式（目前只支持无认证）
 - 如果握手失败，关闭连接
+
 ##### 阶段二：解析 SOCKS5 请求
 ```
 targetAddr, err := socks.ParseRequest(conn)
@@ -100,6 +101,7 @@ log.Println("Request to", targetAddr)
 - 提取目标服务器地址（如 www.google.com:80）
 - 回复客户端连接成功
 - 记录请求日志
+
 ##### 阶段三：连接远程服务器
 ```
 serverConn, err := net.Dial("tcp", serverAddr)
@@ -111,6 +113,7 @@ defer serverConn.Close()
 ```
 - 建立到远程代理服务器的 TCP 连接
 - 如果连接失败，关闭本地连接
+
 ##### 阶段四：发送目标地址到服务器
 ```
 addrBytes := []byte(targetAddr)
@@ -120,6 +123,7 @@ _, err = serverConn.Write(append([]byte{addrLen}, addrBytes...))
 - 将目标地址通过自定义协议发送给远程服务器
 - 协议格式：[地址长度][地址字符串]
 - 例如：[15][www.google.com:80]
+
 ##### 阶段五：建立双向数据转发
 ```
 go io.Copy(serverConn, conn)  // 客户端 -> 服务器
@@ -128,12 +132,14 @@ io.Copy(conn, serverConn)     // 服务器 -> 客户端
 - 使用 io.Copy 实现双向数据转发
 - 第一个 io.Copy 在 goroutine 中运行，将本地客户端数据转发到远程服务器
 - 第二个 io.Copy 在主线程中运行，将远程服务器数据转发回本地客户端
+
 ### 数据流向图
 ```
 浏览器/应用 → [本地客户端:1080] → [远程服务器:9000] → [目标网站]
      ↑                                                      ↓
      ← [本地客户端:1080] ← [远程服务器:9000] ← [目标网站] ←
 ```
+
 ### 关键设计点
 1. 并发处理
 每个客户端连接都在独立的 goroutine 中处理
@@ -149,7 +155,7 @@ io.Copy(conn, serverConn)     // 服务器 -> 客户端
 每个阶段都有错误检查
 出错时及时关闭连接，避免资源泄露
 
-使用场景
+### 使用场景
 浏览器代理：设置浏览器 SOCKS5 代理为 127.0.0.1:1080
 系统代理：设置系统全局 SOCKS5 代理
 应用程序代理：支持 SOCKS5 的应用程序都可以使用
