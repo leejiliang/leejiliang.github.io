@@ -53,6 +53,7 @@ bus-server作为一个伴随 WebRTC 房间运行的协作处理服务，主要�
 - 对外接口	HTTP API（REST 或 WebSocket）
 - 部署平台	 Docker + Nginx
 #### 架构图（单活部署）
+
 ```
                       WebRTC / 客户端
                              │
@@ -66,8 +67,8 @@ bus-server作为一个伴随 WebRTC 房间运行的协作处理服务，主要�
 │ webrtc-v1 (A)│                          │ webrtc-v2 (B)  │
 │ port: 8081   │                          │ port: 8082     │
 └──────────────┘                          └────────────────┘
-
 ```
+
 #### 部署流程（覆盖式滚动）
 部署要解决的问题： 
 1. 不能频繁重启服务来变更 webhook 地址
