@@ -1,7 +1,7 @@
 ---
 layout: fragment
 title: SSH Multi-Hop to Access Target Server
-tags: [golang]
+tags: [linux]
 description: 小case
 keywords: ssh
 mermaid: false
