@@ -1,6 +1,6 @@
 ---
 layout: fragment
-title: 如何通过ssh实现多级跳跃最终访问目标服务器
+title: SSH Multi-Hop to Access Target Server
 tags: [golang]
 description: 小case
 keywords: ssh
