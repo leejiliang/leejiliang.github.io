@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MotorMate 汽车销售系统需求文档
-categories: [工具, Java, 销售系统]
+categories: [MotorMate]
 description: MotorMate 是一个基于 Java 的汽车销售管理系统，本文详细说明系统需求、核心功能设计以及实现思路，帮助销售团队高效管理客户、车辆与订单。
 keywords: MotorMate, Java, 汽车销售系统, 销售管理, 项目需求, 开发文档
 comments: false
