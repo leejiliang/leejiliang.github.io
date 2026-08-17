@@ -83,6 +83,12 @@ openssl s_client -connect robotics-map-eu-cloud.geely-test.com:8883 \
     -key EX1H_EU_PROD.key \
     -CAfile root-ca-eu-test.pem
 
+openssl s_client -connect robotics-map-eu-cloud.geely-test.com:443 \
+    -servername robotics-map-eu-cloud.geely-test.com \
+    -cert EX1H_EU_PROD.pem \
+    -key EX1H_EU_PROD.key \
+    -CAfile root-ca-eu-test.pem
+
 ## 中东生产
 
  openssl s_client -connect robotics-map-me-cloud.geely.com:8883 \
